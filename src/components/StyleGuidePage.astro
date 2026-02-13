@@ -1,0 +1,549 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { t, type Locale } from '../i18n/utils';
+
+interface Props {
+	lang: Locale;
+}
+
+const { lang } = Astro.props;
+---
+
+<Layout title={t(lang, 'styleguide.title')} lang={lang}>
+	<h1>{t(lang, 'styleguide.heading')}</h1>
+	<p class="intro">{t(lang, 'styleguide.intro')}</p>
+
+	<!-- Colors -->
+	<section>
+		<h2>{t(lang, 'styleguide.colors')}</h2>
+		<h3>{t(lang, 'styleguide.corePalette')}</h3>
+		<div class="swatches">
+			<div class="swatch">
+				<div class="swatch-block swatch-heading"></div>
+				<span class="swatch-label">{t(lang, 'styleguide.swatchHeading')}<br/><code>#111111</code></span>
+			</div>
+			<div class="swatch">
+				<div class="swatch-block swatch-text"></div>
+				<span class="swatch-label">{t(lang, 'styleguide.swatchText')}<br/><code>#444444</code></span>
+			</div>
+			<div class="swatch">
+				<div class="swatch-block swatch-primary"></div>
+				<span class="swatch-label">{t(lang, 'styleguide.swatchPrimary')}<br/><code>#09637E</code></span>
+			</div>
+			<div class="swatch">
+				<div class="swatch-block swatch-secondary"></div>
+				<span class="swatch-label">{t(lang, 'styleguide.swatchSecondary')}<br/><code>#088395</code></span>
+			</div>
+			<div class="swatch">
+				<div class="swatch-block swatch-tertiary"></div>
+				<span class="swatch-label">{t(lang, 'styleguide.swatchTertiary')}<br/><code>#7AB2B2</code></span>
+			</div>
+			<div class="swatch">
+				<div class="swatch-block swatch-bg"></div>
+				<span class="swatch-label">{t(lang, 'styleguide.swatchBg')}<br/><code>#EBF4F6</code></span>
+			</div>
+		</div>
+		<h3>{t(lang, 'styleguide.derived')}</h3>
+		<div class="swatches">
+			<div class="swatch">
+				<div class="swatch-block swatch-border"></div>
+				<span class="swatch-label">{t(lang, 'styleguide.swatchBorder')}<br/><code>#b8d8dc</code></span>
+			</div>
+			<div class="swatch">
+				<div class="swatch-block swatch-surface"></div>
+				<span class="swatch-label">{t(lang, 'styleguide.swatchSurface')}<br/><code>#d5e8eb</code></span>
+			</div>
+		</div>
+
+		<h3>{t(lang, 'styleguide.usage')}</h3>
+		<table class="usage-table">
+			<thead><tr><th>{t(lang, 'styleguide.role')}</th><th>{t(lang, 'styleguide.color')}</th></tr></thead>
+			<tbody>
+				<tr><td>{t(lang, 'styleguide.headings')}</td><td><span class="dot dot-heading"></span> {t(lang, 'styleguide.colorBlack')} <code>#111111</code></td></tr>
+				<tr><td>{t(lang, 'styleguide.bodyText')}</td><td><span class="dot dot-text"></span> {t(lang, 'styleguide.colorDarkGray')} <code>#444444</code></td></tr>
+				<tr><td>{t(lang, 'styleguide.primaryLinks')}</td><td><span class="dot dot-primary"></span> {t(lang, 'styleguide.colorNavy')} <code>#09637E</code></td></tr>
+				<tr><td>{t(lang, 'styleguide.secondaryMeta')}</td><td><span class="dot dot-secondary"></span> {t(lang, 'styleguide.colorDarkTeal')} <code>#088395</code></td></tr>
+				<tr><td>{t(lang, 'styleguide.tertiaryAccents')}</td><td><span class="dot dot-tertiary"></span> {t(lang, 'styleguide.colorTeal')} <code>#7AB2B2</code></td></tr>
+				<tr><td>{t(lang, 'styleguide.pageBackground')}</td><td><span class="dot dot-bg"></span> {t(lang, 'styleguide.colorCream')} <code>#EBF4F6</code></td></tr>
+				<tr><td>{t(lang, 'styleguide.bordersAndDividersRole')}</td><td><span class="dot dot-border"></span> {t(lang, 'styleguide.colorLightTeal')} <code>#b8d8dc</code></td></tr>
+				<tr><td>{t(lang, 'styleguide.tagsCodeHover')}</td><td><span class="dot dot-surface"></span> {t(lang, 'styleguide.colorMist')} <code>#d5e8eb</code></td></tr>
+			</tbody>
+		</table>
+	</section>
+
+	<!-- Typography -->
+	<section>
+		<h2>{t(lang, 'styleguide.typography')}</h2>
+		<p class="meta">Font family: <code>'Noto Sans', sans-serif</code></p>
+
+		<h3>{t(lang, 'styleguide.headingsAndText')}</h3>
+		<div class="type-specimen">
+			<div class="type-row">
+				<span class="type-label">h1</span>
+				<h1 class="sample">The quick brown fox</h1>
+			</div>
+			<div class="type-row">
+				<span class="type-label">h2</span>
+				<h2 class="sample">The quick brown fox</h2>
+			</div>
+			<div class="type-row">
+				<span class="type-label">h3</span>
+				<h3 class="sample">The quick brown fox</h3>
+			</div>
+			<div class="type-row">
+				<span class="type-label">p</span>
+				<p class="sample">The quick brown fox jumps over the lazy dog. Pack my box with five dozen liquor jugs.</p>
+			</div>
+			<div class="type-row">
+				<span class="type-label">small</span>
+				<small class="sample">The quick brown fox jumps over the lazy dog.</small>
+			</div>
+		</div>
+
+		<h3>{t(lang, 'styleguide.weights')}</h3>
+		<div class="type-specimen">
+			<div class="type-row">
+				<span class="type-label">100</span>
+				<p class="sample weight-100">Noto Sans Thin — The quick brown fox jumps over the lazy dog.</p>
+			</div>
+			<div class="type-row">
+				<span class="type-label">200</span>
+				<p class="sample weight-200">Noto Sans ExtraLight — The quick brown fox jumps over the lazy dog.</p>
+			</div>
+			<div class="type-row">
+				<span class="type-label">300</span>
+				<p class="sample weight-300">Noto Sans Light — The quick brown fox jumps over the lazy dog.</p>
+			</div>
+			<div class="type-row">
+				<span class="type-label">400</span>
+				<p class="sample weight-400">Noto Sans Regular — The quick brown fox jumps over the lazy dog.</p>
+			</div>
+			<div class="type-row">
+				<span class="type-label">500</span>
+				<p class="sample weight-500">Noto Sans Medium — The quick brown fox jumps over the lazy dog.</p>
+			</div>
+			<div class="type-row">
+				<span class="type-label">600</span>
+				<p class="sample weight-600">Noto Sans SemiBold — The quick brown fox jumps over the lazy dog.</p>
+			</div>
+			<div class="type-row">
+				<span class="type-label">700</span>
+				<p class="sample weight-700">Noto Sans Bold — The quick brown fox jumps over the lazy dog.</p>
+			</div>
+			<div class="type-row">
+				<span class="type-label">800</span>
+				<p class="sample weight-800">Noto Sans ExtraBold — The quick brown fox jumps over the lazy dog.</p>
+			</div>
+			<div class="type-row">
+				<span class="type-label">900</span>
+				<p class="sample weight-900">Noto Sans Black — The quick brown fox jumps over the lazy dog.</p>
+			</div>
+		</div>
+
+		<h3>{t(lang, 'styleguide.styles')}</h3>
+		<div class="type-specimen">
+			<div class="type-row">
+				<span class="type-label">normal</span>
+				<p class="sample">Noto Sans Regular — The quick brown fox jumps over the lazy dog.</p>
+			</div>
+			<div class="type-row">
+				<span class="type-label">italic</span>
+				<p class="sample style-italic">Noto Sans Italic — The quick brown fox jumps over the lazy dog.</p>
+			</div>
+			<div class="type-row">
+				<span class="type-label">bold italic</span>
+				<p class="sample style-bold-italic">Noto Sans Bold Italic — The quick brown fox jumps over the lazy dog.</p>
+			</div>
+		</div>
+	</section>
+
+	<!-- Spacing -->
+	<section>
+		<h2>{t(lang, 'styleguide.spacing')}</h2>
+		<div class="spacing-scale">
+			<div class="spacing-item">
+				<div class="spacing-box spacing-025"></div>
+				<code>0.25rem</code>
+			</div>
+			<div class="spacing-item">
+				<div class="spacing-box spacing-05"></div>
+				<code>0.5rem</code>
+			</div>
+			<div class="spacing-item">
+				<div class="spacing-box spacing-1"></div>
+				<code>1rem</code>
+			</div>
+			<div class="spacing-item">
+				<div class="spacing-box spacing-15"></div>
+				<code>1.5rem</code>
+			</div>
+			<div class="spacing-item">
+				<div class="spacing-box spacing-2"></div>
+				<code>2rem</code>
+			</div>
+			<div class="spacing-item">
+				<div class="spacing-box spacing-3"></div>
+				<code>3rem</code>
+			</div>
+			<div class="spacing-item">
+				<div class="spacing-box spacing-4"></div>
+				<code>4rem</code>
+			</div>
+		</div>
+	</section>
+
+	<!-- Links & Buttons -->
+	<section>
+		<h2>{t(lang, 'styleguide.linksAndButtons')}</h2>
+		<div class="example-row">
+			<a href="#" class="link">{t(lang, 'styleguide.defaultLink')}</a>
+			<a href="#" class="link accent">{t(lang, 'styleguide.accentLink')}</a>
+		</div>
+		<div class="example-row">
+			<a href="#" class="btn">{t(lang, 'styleguide.button')}</a>
+			<a href="#" class="btn btn-accent">{t(lang, 'styleguide.accentButton')}</a>
+			<a href="#" class="btn btn-outline">{t(lang, 'styleguide.outlineButton')}</a>
+		</div>
+	</section>
+
+	<!-- Tags / Pills -->
+	<section>
+		<h2>{t(lang, 'styleguide.tags')}</h2>
+		<div class="tags">
+			<span class="tag">HTML</span>
+			<span class="tag">CSS</span>
+			<span class="tag">JavaScript</span>
+			<span class="tag">Astro</span>
+			<span class="tag">TypeScript</span>
+		</div>
+	</section>
+
+	<!-- Borders & Dividers -->
+	<section>
+		<h2>{t(lang, 'styleguide.bordersAndDividers')}</h2>
+		<div class="border-examples">
+			<div class="border-example">
+				<div class="border-demo"></div>
+				<code>1px solid var(--color-border)</code>
+			</div>
+			<div class="border-example">
+				<div class="border-demo border-rounded"></div>
+				<code>border-radius: 4px</code>
+			</div>
+		</div>
+		<hr />
+		<p class="meta">{t(lang, 'styleguide.hrDescription')}</p>
+	</section>
+
+	<!-- Layout -->
+	<section>
+		<h2>{t(lang, 'styleguide.layout')}</h2>
+		<div class="layout-example">
+			<div class="layout-box">
+				<code>max-width: 720px</code>
+				<p class="meta">{t(lang, 'styleguide.layoutDescription')}</p>
+			</div>
+		</div>
+	</section>
+</Layout>
+
+<style>
+	.intro {
+		color: var(--color-text);
+		font-size: 1.125rem;
+		margin-bottom: 2.5rem;
+	}
+
+	section {
+		margin-bottom: 3rem;
+	}
+
+	h2 {
+		font-size: 1.25rem;
+		border-bottom: 1px solid var(--color-border);
+		padding-bottom: 0.25rem;
+		margin-bottom: 1.25rem;
+	}
+
+	h3 {
+		font-size: 0.9375rem;
+		color: var(--color-text);
+		margin-bottom: 0.75rem;
+	}
+
+	.meta {
+		color: var(--color-text);
+		font-size: 0.875rem;
+	}
+
+	code {
+		font-size: 0.8125rem;
+		background: var(--color-surface);
+		padding: 0.125rem 0.375rem;
+		border-radius: 3px;
+	}
+
+	/* Color swatches */
+	.swatches {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+		gap: 1rem;
+		margin-bottom: 1.5rem;
+	}
+
+	.swatch {
+		text-align: center;
+	}
+
+	.swatch-block {
+		width: 100%;
+		aspect-ratio: 1;
+		border-radius: 6px;
+		margin-bottom: 0.5rem;
+	}
+
+	.swatch-heading    { background: var(--color-heading); }
+	.swatch-text       { background: var(--color-text); }
+	.swatch-primary    { background: var(--color-primary); }
+	.swatch-secondary  { background: var(--color-secondary); }
+	.swatch-tertiary   { background: var(--color-tertiary); }
+	.swatch-bg         { background: var(--color-bg); }
+	.swatch-border     { background: var(--color-border); }
+	.swatch-surface    { background: var(--color-surface); }
+
+	.swatch-label {
+		font-size: 0.75rem;
+		color: var(--color-text);
+		line-height: 1.4;
+	}
+
+	.swatch-label code {
+		font-size: 0.6875rem;
+	}
+
+	/* Usage table */
+	.usage-table {
+		width: 100%;
+		border-collapse: collapse;
+		font-size: 0.875rem;
+	}
+
+	.usage-table th {
+		text-align: left;
+		padding: 0.5rem 0.75rem;
+		border-bottom: 2px solid var(--color-border);
+		color: var(--color-heading);
+	}
+
+	.usage-table td {
+		padding: 0.5rem 0.75rem;
+		border-bottom: 1px solid var(--color-border);
+		color: var(--color-text);
+	}
+
+	.dot {
+		display: inline-block;
+		width: 0.75rem;
+		height: 0.75rem;
+		border-radius: 50%;
+		vertical-align: middle;
+		margin-right: 0.375rem;
+	}
+
+	.dot-heading    { background: var(--color-heading); }
+	.dot-text       { background: var(--color-text); }
+	.dot-primary    { background: var(--color-primary); }
+	.dot-secondary  { background: var(--color-secondary); }
+	.dot-tertiary   { background: var(--color-tertiary); }
+	.dot-bg         { background: var(--color-bg); }
+	.dot-border     { background: var(--color-border); }
+	.dot-surface    { background: var(--color-surface); }
+
+	/* Typography */
+	.type-specimen {
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+	}
+
+	.type-row {
+		display: flex;
+		align-items: baseline;
+		gap: 1rem;
+		border-bottom: 1px solid var(--color-surface);
+		padding-bottom: 1rem;
+	}
+
+	.type-label {
+		font-size: 0.75rem;
+		font-family: monospace;
+		color: var(--color-tertiary);
+		min-width: 3rem;
+	}
+
+	.sample {
+		margin: 0;
+	}
+
+	h1.sample { font-size: 2.5rem; }
+	h2.sample { font-size: 1.25rem; border: none; padding: 0; }
+	h3.sample { font-size: 1rem; color: var(--color-heading); }
+	p.sample  { font-size: 1rem; color: var(--color-text); line-height: 1.7; }
+
+	/* Font weights */
+	.weight-100 { font-weight: 100; }
+	.weight-200 { font-weight: 200; }
+	.weight-300 { font-weight: 300; }
+	.weight-400 { font-weight: 400; }
+	.weight-500 { font-weight: 500; }
+	.weight-600 { font-weight: 600; }
+	.weight-700 { font-weight: 700; }
+	.weight-800 { font-weight: 800; }
+	.weight-900 { font-weight: 900; }
+
+	/* Font styles */
+	.style-italic      { font-style: italic; }
+	.style-bold-italic  { font-weight: 700; font-style: italic; }
+
+	/* Spacing */
+	.spacing-scale {
+		display: flex;
+		align-items: end;
+		gap: 1.5rem;
+		flex-wrap: wrap;
+	}
+
+	.spacing-item {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 0.5rem;
+	}
+
+	.spacing-box {
+		background: var(--color-tertiary);
+		border-radius: 2px;
+	}
+
+	.spacing-025 { width: 0.25rem; height: 0.25rem; }
+	.spacing-05  { width: 0.5rem;  height: 0.5rem; }
+	.spacing-1   { width: 1rem;    height: 1rem; }
+	.spacing-15  { width: 1.5rem;  height: 1.5rem; }
+	.spacing-2   { width: 2rem;    height: 2rem; }
+	.spacing-3   { width: 3rem;    height: 3rem; }
+	.spacing-4   { width: 4rem;    height: 4rem; }
+
+	/* Links & Buttons */
+	.example-row {
+		display: flex;
+		align-items: center;
+		gap: 1.5rem;
+		margin-bottom: 1.25rem;
+		flex-wrap: wrap;
+	}
+
+	.link {
+		color: var(--color-heading);
+		text-decoration: underline;
+	}
+
+	.link.accent {
+		color: var(--color-primary);
+		text-decoration: none;
+	}
+
+	.link.accent:hover {
+		text-decoration: underline;
+	}
+
+	.btn {
+		display: inline-block;
+		padding: 0.5rem 1.25rem;
+		border: 1px solid var(--color-border);
+		border-radius: 4px;
+		text-decoration: none;
+		color: var(--color-heading);
+		font-size: 0.875rem;
+	}
+
+	.btn:hover {
+		background: var(--color-surface);
+	}
+
+	.btn-accent {
+		background: var(--color-primary);
+		border-color: var(--color-primary);
+		color: var(--color-bg);
+	}
+
+	.btn-accent:hover {
+		background: var(--color-secondary);
+		border-color: var(--color-secondary);
+	}
+
+	.btn-outline {
+		border-color: var(--color-heading);
+	}
+
+	.btn-outline:hover {
+		background: var(--color-heading);
+		color: var(--color-bg);
+	}
+
+	/* Tags */
+	.tags {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.5rem;
+	}
+
+	.tag {
+		padding: 0.25rem 0.75rem;
+		background: var(--color-surface);
+		border-radius: 4px;
+		font-size: 0.875rem;
+	}
+
+	/* Borders */
+	.border-examples {
+		display: flex;
+		gap: 2rem;
+		margin-bottom: 1.5rem;
+	}
+
+	.border-example {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 0.5rem;
+	}
+
+	.border-demo {
+		width: 4rem;
+		height: 4rem;
+		background: var(--color-bg);
+		border: 1px solid var(--color-border);
+	}
+
+	.border-rounded {
+		border-radius: 4px;
+	}
+
+	hr {
+		border: none;
+		border-top: 1px solid var(--color-border);
+		margin: 1.5rem 0;
+	}
+
+	/* Layout */
+	.layout-box {
+		border: 2px dashed var(--color-border);
+		border-radius: 4px;
+		padding: 1.5rem;
+		text-align: center;
+	}
+
+	.layout-box p {
+		margin: 0.5rem 0 0;
+	}
+</style>

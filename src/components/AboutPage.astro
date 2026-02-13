@@ -1,0 +1,63 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { t, type Locale } from '../i18n/utils';
+
+interface Props {
+	lang: Locale;
+}
+
+const { lang } = Astro.props;
+---
+
+<Layout title={t(lang, 'about.title')} lang={lang}>
+	<h1>{t(lang, 'about.heading')}</h1>
+
+	<section>
+		<p>{t(lang, 'about.p1')}</p>
+		<p>{t(lang, 'about.p2')}</p>
+	</section>
+
+	<section>
+		<h2>{t(lang, 'about.contact')}</h2>
+		<ul>
+			<li><a href="mailto:kristian@fink.no">{t(lang, 'about.email')}</a></li>
+			<li><a href="https://github.com">{t(lang, 'about.github')}</a></li>
+			<li><a href="https://www.linkedin.com/in/kristian-wannebo-b4a554b5/">{t(lang, 'about.linkedin')}</a></li>
+		</ul>
+	</section>
+</Layout>
+
+<style>
+	h1 {
+		margin-bottom: 1.5rem;
+	}
+
+	section {
+		margin-bottom: 2rem;
+	}
+
+	p {
+		line-height: 1.7;
+		color: var(--color-text);
+	}
+
+	h2 {
+		font-size: 1.25rem;
+	}
+
+	ul {
+		list-style: none;
+		padding: 0;
+		display: flex;
+		gap: 1.5rem;
+	}
+
+	a {
+		color: var(--color-primary);
+		text-decoration: none;
+	}
+
+	a:hover {
+		text-decoration: underline;
+	}
+</style>
