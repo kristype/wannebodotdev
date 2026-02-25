@@ -7,7 +7,7 @@ export function t(lang: Locale, key: TranslationKey): string {
 
 export function getLocalePath(lang: Locale, path: string): string {
   const cleanPath = path === '/' ? '' : path;
-  if (lang === 'en') {
+  if (lang === 'no') {
     return cleanPath || '/';
   }
   return `/${lang}${cleanPath}` || `/${lang}`;
@@ -18,7 +18,7 @@ export function getLangFromUrl(url: URL): Locale {
   if (lang in translations) {
     return lang as Locale;
   }
-  return 'en';
+  return 'no';
 }
 
-export const locales: Locale[] = ['en', 'no', 'fr'];
+export const locales: Locale[] = ['no', 'en', 'fr'];
