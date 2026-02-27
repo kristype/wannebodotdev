@@ -1,0 +1,203 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { t, type Locale } from '../i18n/utils';
+
+interface Props {
+	lang: Locale;
+}
+
+const { lang } = Astro.props;
+---
+
+<Layout title={t(lang, 'resume.title')} lang={lang}>
+	<h1>{t(lang, 'resume.heading')}</h1>
+	<p class="summary">{t(lang, 'resume.summary')}</p>
+
+	<section>
+		<h2>{t(lang, 'resume.coreSkills')}</h2>
+		<ul class="skills">
+			<li>.NET / C#</li>
+			<li>ASP.NET Core</li>
+			<li>Entity Framework</li>
+			<li>TypeScript</li>
+			<li>JavaScript</li>
+			<li>Angular</li>
+			<li>React</li>
+			<li>HTML &amp; CSS</li>
+			<li>SQL Server</li>
+			<li>Azure</li>
+			<li>Kubernetes</li>
+			<li>Docker</li>
+		</ul>
+	</section>
+
+	<section>
+		<h2>{t(lang, 'resume.experience')}</h2>
+
+		<div class="entry">
+			<img class="entry-logo fink-logo" src="/logos/fink.png" alt="Fink AS" />
+			<div class="entry-content">
+				<h3>Fink AS <span class="date-tag">Jan 2026 &ndash; {t(lang, 'resume.present')}</span></h3>
+				<span class="meta">{t(lang, 'resume.seniorConsultant')}</span>
+				<p class="location">Oslo, Norway &middot; {t(lang, 'resume.hybrid')}</p>
+			</div>
+		</div>
+
+		<div class="entry">
+			<img class="entry-logo" src="/logos/wannebo.svg" alt="Wannebo Consulting" />
+			<div class="entry-content">
+				<h3>Wannebo Consulting <span class="date-tag">Aug 2022 &ndash; Dec 2025</span></h3>
+				<span class="meta">{t(lang, 'resume.seniorConsultant')}</span>
+				<p class="location">Lyon, France &middot; {t(lang, 'resume.remote')}</p>
+			</div>
+		</div>
+
+		<div class="entry">
+			<img class="entry-logo" src="/logos/webstep.png" alt="Webstep" />
+			<div class="entry-content">
+				<h3>Webstep <span class="date-tag">Jul 2020 &ndash; Aug 2022</span></h3>
+				<span class="meta">{t(lang, 'resume.seniorConsultant')}</span>
+				<p class="location">Trondheim, Norway &middot; {t(lang, 'resume.hybrid')}</p>
+			</div>
+		</div>
+
+		<div class="entry">
+			<img class="entry-logo" src="/logos/inmeta.png" alt="Inmeta" />
+			<div class="entry-content">
+				<h3>Inmeta <span class="date-tag">Jan 2018 &ndash; Jun 2020</span></h3>
+				<span class="meta">{t(lang, 'resume.consultant')}</span>
+				<p class="location">Trondheim, Norway</p>
+			</div>
+		</div>
+
+		<div class="entry">
+			<img class="entry-logo" src="/logos/comsol.png" alt="COMSOL, Inc." />
+			<div class="entry-content">
+				<h3>COMSOL, Inc. <span class="date-tag">May 2012 &ndash; Dec 2017</span></h3>
+				<span class="meta">{t(lang, 'resume.softwareEngineer')}</span>
+				<p class="location">Trondheim, Norway</p>
+			</div>
+		</div>
+	</section>
+
+	<section>
+		<h2>{t(lang, 'resume.education')}</h2>
+		<div class="entry">
+			<img class="entry-logo" src="/logos/ntnu.svg" alt="NTNU" />
+			<div class="entry-content">
+				<h3>NTNU <span class="date-tag">2014 &ndash; 2017</span></h3>
+				<span class="meta">M.Sc. Computer Science</span>
+			</div>
+		</div>
+		<div class="entry">
+			<img class="entry-logo" src="/logos/hist.png" alt="H&oslash;gskolen i S&oslash;r-Tr&oslash;ndelag" />
+			<div class="entry-content">
+				<h3>H&oslash;gskolen i S&oslash;r-Tr&oslash;ndelag <span class="date-tag">2009 &ndash; 2012</span></h3>
+				<span class="meta">B.Sc. Computer Science</span>
+			</div>
+		</div>
+	</section>
+</Layout>
+
+<style>
+	h1 {
+		margin-bottom: 0.5rem;
+	}
+
+	.summary {
+		color: var(--color-text);
+		font-size: 1.0625rem;
+		line-height: 1.6;
+		margin-bottom: 2rem;
+	}
+
+	section {
+		margin-bottom: 4rem;
+	}
+
+	h2 {
+		font-size: 1.25rem;
+		border-bottom: 1px solid var(--color-border);
+		padding-bottom: 0.25rem;
+		margin-bottom: 1rem;
+	}
+
+	.entry {
+		display: flex;
+		gap: 0.75rem;
+		margin-bottom: 1.75rem;
+	}
+
+	.entry-logo {
+		width: 32px;
+		height: 32px;
+		object-fit: contain;
+		border-radius: 4px;
+		flex-shrink: 0;
+		align-self: flex-start;
+		margin-top: 0.75rem;
+	}
+
+	[data-theme="dark"] .fink-logo {
+		filter: invert(1);
+	}
+
+	@media (prefers-color-scheme: dark) {
+		:root:not([data-theme="light"]) .fink-logo {
+			filter: invert(1);
+		}
+	}
+
+	.entry h3 {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+		font-size: 1rem;
+		margin-bottom: 0.25rem;
+	}
+
+	.meta {
+		display: block;
+		font-weight: normal;
+		color: var(--color-secondary);
+		margin-bottom: 0.25rem;
+	}
+
+	.date-tag {
+		display: inline-block;
+		padding: 0.15rem 0.6rem;
+		background: var(--color-surface);
+		border-radius: 4px;
+		font-size: 0.8125rem;
+		color: var(--color-text);
+		font-weight: normal;
+		vertical-align: middle;
+	}
+
+	.location {
+		font-size: 0.875rem;
+		color: var(--color-text);
+		margin: 0.125rem 0 0;
+	}
+
+	.entry p {
+		color: var(--color-text);
+		margin: 0 0 0.5rem;
+		line-height: 1.6;
+	}
+
+	.skills {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.5rem;
+		list-style: none;
+		padding: 0;
+	}
+
+	.skills li {
+		padding: 0.25rem 0.75rem;
+		background: var(--color-surface);
+		border-radius: 4px;
+		font-size: 0.875rem;
+	}
+</style>

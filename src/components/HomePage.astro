@@ -1,0 +1,59 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { t, getLocalePath, type Locale } from '../i18n/utils';
+
+interface Props {
+	lang: Locale;
+}
+
+const { lang } = Astro.props;
+---
+
+<Layout title={t(lang, 'home.title')} lang={lang}>
+	<section class="hero">
+		<h1>{t(lang, 'home.greeting')} <span class="name">{t(lang, 'home.name')}</span></h1>
+		<p>{t(lang, 'home.tagline')}</p>
+		<div class="cta">
+			<a href={getLocalePath(lang, '/resume')}>{t(lang, 'home.viewResume')}</a>
+			<a href={getLocalePath(lang, '/about')}>{t(lang, 'home.aboutMe')}</a>
+		</div>
+	</section>
+</Layout>
+
+<style>
+	.hero {
+		padding: 4rem 0;
+	}
+
+	h1 {
+		font-size: 2.5rem;
+		margin-bottom: 0.5rem;
+	}
+
+	.name {
+		color: var(--color-primary);
+	}
+
+	p {
+		font-size: 1.25rem;
+		color: var(--color-text);
+	}
+
+	.cta {
+		display: flex;
+		gap: 1rem;
+		margin-top: 2rem;
+	}
+
+	.cta a {
+		padding: 0.5rem 1.25rem;
+		border: 1px solid var(--color-border);
+		border-radius: 4px;
+		text-decoration: none;
+		color: var(--color-heading);
+	}
+
+	.cta a:hover {
+		background: var(--color-surface);
+	}
+</style>
