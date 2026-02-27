@@ -1,6 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { t, getLocalePath, locales, type Locale } from '../i18n/utils';
+import { t, type Locale } from '../i18n/utils';
 
 interface Props {
 	lang: Locale;
@@ -57,53 +57,19 @@ const projects: Project[] = [
 	},
 	{
 		client: 'Statens lånekasse for utdanning',
-		name: 'Nye lånekassen.no',
-		period: 'Aug 2019 – Jun 2020',
+		name: 'Lånekassen',
+		period: 'Aug 2018 – Jun 2020',
 		role: {
-			en: 'Team Lead, Tech Lead',
-			no: 'Team lead, Tech lead',
-			fr: 'Team Lead, Tech Lead',
+			en: 'Team Lead, Tech Lead, Full-stack Developer',
+			no: 'Team lead, Tech lead, Full-stack utvikler',
+			fr: 'Team Lead, Tech Lead, Développeur full-stack',
 		},
 		description: {
-			en: 'Led a team of 7 building a new accessible website for Norway\'s Student Loan Fund, replacing existing calculators with interactive guides. Responsible for tech architecture (EPiServer, React, ASP.NET), Azure CI/CD pipelines, browsertesting across multiple browsers, and threat modeling using Microsoft SDL and OWASP.',
-			no: 'Ledet et team på 7 for å bygge ny tilgjengelig nettside for Lånekassen, med interaktive veiledere som erstattet kalkulatorene. Ansvar for teknologi og arkitektur (EPiServer, React, ASP.NET), Azure CI/CD-pipelines, browsertesting og trusselmodellering med Microsoft SDL og OWASP.',
-			fr: 'Direction d\'une équipe de 7 personnes pour construire le nouveau site accessible de Lånekassen, remplaçant les calculateurs par des guides interactifs. Responsable de l\'architecture technique (EPiServer, React, ASP.NET), des pipelines CI/CD Azure, et de la modélisation des menaces avec Microsoft SDL et OWASP.',
+			en: 'Multiple projects for Norway\'s Student Loan Fund. Led a team of 7 building the new accessible lånekassen.no (EPiServer, React, WCAG 2.1). Also built an adult education dialog integrating with UDIR\'s Grep database, and a degree conversion page in the customer portal DineSider.',
+			no: 'Flere prosjekter for Lånekassen. Ledet team på 7 i bygging av nye lånekassen.no (EPiServer, React, WCAG 2.1). Bygde også dialog for voksenopplæring med integrasjon mot UDIRs Grep-database, og gradsomgjøringsside i kundeportalen DineSider.',
+			fr: 'Plusieurs projets pour le Fonds norvégien de prêts étudiants. Direction d\'une équipe de 7 pour le nouveau lånekassen.no (EPiServer, React, WCAG 2.1). Développement d\'un dialogue pour la formation des adultes avec la base Grep d\'UDIR, et d\'une page de conversion de prêt dans le portail DineSider.',
 		},
-		tech: ['React', 'TypeScript', 'ASP.NET', 'EPiServer', 'Azure', 'Azure DevOps', 'WCAG 2.1', 'Redux', 'Jest', 'BrowserStack', 'SQL Server', 'C#'],
-		logo: { src: '/logos/lanekassen.png', alt: 'Statens lånekasse for utdanning' },
-	},
-	{
-		client: 'Statens lånekasse for utdanning',
-		name: 'Ny dialog for voksenopplæring',
-		period: 'Nov 2018 – Jul 2019',
-		role: {
-			en: 'Full-stack Developer',
-			no: 'Full-stack utvikler',
-			fr: 'Développeur full-stack',
-		},
-		description: {
-			en: 'Developed a new adult education dialog in Lånekassen\'s existing Arbeidsflate solution, integrating with UDIR\'s Grep database for curriculum and subject validation. Took over as the sole developer to complete the project after team downsizing due to budget cuts.',
-			no: 'Utviklet ny dialog for voksenopplæring i Lånekassens eksisterende Arbeidsflate-løsning, med integrasjon mot UDIRs Grep-database for validering av fag og læreplaner. Fullførte prosjektet som eneste utvikler etter budsjettkutt.',
-			fr: 'Développement d\'un nouveau dialogue pour la formation des adultes dans la solution Arbeidsflate de Lånekassen, avec intégration à la base Grep d\'UDIR pour la validation des cursus. A terminé le projet en tant que seul développeur après réduction d\'équipe.',
-		},
-		tech: ['ASP.NET Core', 'Entity Framework Core', 'SPARQL', 'React', 'JavaScript', 'SQL Server', 'Azure DevOps', 'WCF', 'C#'],
-		logo: { src: '/logos/lanekassen.png', alt: 'Statens lånekasse for utdanning' },
-	},
-	{
-		client: 'Statens lånekasse for utdanning',
-		name: 'Gradsomgjøring',
-		period: 'Aug 2018 – Nov 2018',
-		role: {
-			en: 'Full-stack Developer',
-			no: 'Full-stack utvikler',
-			fr: 'Développeur full-stack',
-		},
-		description: {
-			en: 'Built a new degree conversion page in Lånekassen\'s customer portal DineSider, showing loan-to-grant conversion status after completing a degree. Implemented frontend to Lånekassen standards and backend API endpoints calculating conversion status based on data from the Modulis backend.',
-			no: 'Bygde ny gradsomgjøringsside i Lånekassens kundeportal DineSider, med oversikt over konverteringsstatus fra lån til stipend etter fullført grad. Implementerte frontend etter Lånekassens standarder og backend API-endepunkter som kalkulerte konverteringsstatus fra Modulis.',
-			fr: 'Développement d\'une nouvelle page de conversion de prêt en bourse dans le portail client DineSider de Lånekassen. Implémentation du frontend selon les standards de Lånekassen et des endpoints API calculant le statut de conversion à partir du système Modulis.',
-		},
-		tech: ['ASP.NET', 'C#', 'KnockoutJS', 'jQuery', 'WCF', 'SQL Server', '.NET'],
+		tech: ['React', 'TypeScript', 'ASP.NET', 'ASP.NET Core', 'EPiServer', 'Entity Framework Core', 'Azure', 'Azure DevOps', 'WCAG 2.1', 'SPARQL', 'SQL Server', 'C#'],
 		logo: { src: '/logos/lanekassen.png', alt: 'Statens lånekasse for utdanning' },
 	},
 	{
@@ -125,175 +91,33 @@ const projects: Project[] = [
 	},
 	{
 		client: 'Equinor ASA',
-		name: 'STEA Repository',
-		period: 'Jan 2015 – Jun 2017',
-		role: {
-			en: 'System Developer',
-			no: 'Systemutvikler',
-			fr: 'Développeur système',
-		},
-		description: {
-			en: 'Extended the STEA economic analysis tool with a repository module for storing and versioning models, using token-based Active Directory authentication. Led development of the browsing frontend and an editor for large configuration files and tax regimes.',
-			no: 'Utvidet STEA med et repository-modul for lagring og versjonering av modeller, med tokenbasert Active Directory-autentisering. Ledet utvikling av frontend for browsing av innhold og editor for store konfigurasjonsfiler og skatteregimer.',
-			fr: 'Extension de STEA avec un module de dépôt pour stocker et versionner des modèles économiques, avec authentification Active Directory basée sur des tokens. Direction du développement du frontend de navigation et d\'un éditeur pour les fichiers de configuration et régimes fiscaux.',
-		},
-		tech: ['C#', '.NET', 'Entity Framework', 'OAuth 2.0', 'REST API', 'TDD', 'AutoMapper', 'FitNesse'],
-		logo: { src: '/logos/equinor.svg', alt: 'Equinor ASA' },
-	},
-	{
-		client: 'Equinor ASA',
 		name: 'STEA',
 		period: 'May 2012 – Dec 2017',
 		role: {
-			en: 'System Developer',
-			no: 'Systemutvikler',
-			fr: 'Développeur système',
-		},
-		description: {
-			en: 'Long-term development and maintenance of STEA, Equinor\'s economic analysis tool used to model profitability of all oil and gas projects across the entire portfolio (platforms, facilities). Team of ~8; built WPF frontend modules, calculation engines, performance optimizations, and acceptance tests.',
-			no: 'Langsiktig utvikling og vedlikehold av STEA, Equinors verktøy for økonomisk analyse brukt til å modellere lønnsomhet for alle olje- og gassprosjekter i porteføljen. Team på ~8 personer; bygde WPF-moduler, beregningskjerner, ytelsesoptimaliseringer og akseptansetester.',
-			fr: 'Développement et maintenance à long terme de STEA, l\'outil d\'analyse économique d\'Equinor utilisé pour modéliser la rentabilité de tous les projets pétroliers et gaziers du portefeuille. Équipe de ~8 personnes ; développement de modules WPF, moteurs de calcul, optimisations de performance et tests d\'acceptation.',
-		},
-		tech: ['C#', '.NET', 'WPF', 'NUnit', 'FitNesse', 'TDD', 'Excel Interop', 'SpreadsheetGear', 'MEF', 'TeamCity'],
-		logo: { src: '/logos/equinor.svg', alt: 'Equinor ASA' },
-	},
-	{
-		client: 'Equinor ASA',
-		name: 'Profile Mass Update',
-		period: 'Feb 2014 – Sep 2014',
-		role: {
-			en: 'Project Lead, System Developer / Architect',
-			no: 'Prosjektleder, Systemutvikler / Systemarkitekt',
-			fr: 'Chef de projet, Développeur / Architecte',
-		},
-		description: {
-			en: 'Led development of a new STEA frontend module for bulk editing parameters across multiple project model profiles simultaneously. Also managed planning, progress tracking, and resource allocation.',
-			no: 'Ledet utvikling av ny STEA-frontendmodul for massediging av parametere på tvers av mange profilmodeller. Hadde også ansvar for planlegging, fremdrift og ressursfordeling.',
-			fr: 'Direction du développement d\'un nouveau module frontend STEA permettant l\'édition en masse de paramètres sur plusieurs profils de modèles de projet. Également responsable de la planification et de la gestion des ressources.',
-		},
-		tech: ['C#', '.NET', 'WPF', 'MEF', 'TDD', 'FitNesse', 'SpreadsheetGear'],
-		logo: { src: '/logos/equinor.svg', alt: 'Equinor ASA' },
-	},
-	{
-		client: 'Equinor ASA',
-		name: 'Sensitiviteter',
-		period: 'Aug 2013 – Dec 2013',
-		role: {
 			en: 'System Developer / Architect',
 			no: 'Systemutvikler / Systemarkitekt',
 			fr: 'Développeur / Architecte système',
 		},
 		description: {
-			en: 'Designed and built a sensitivity analysis module for STEA to evaluate the impact of prices, production, costs, and investments on oil platform profitability, with batch calculations and data grid reporting.',
-			no: 'Designet og bygde sensitivitetsanalysemodul for STEA som evaluerte effekten av priser, produksjon, kostnader og investeringer på lønnsomheten til oljeplattformer, med batchkjøring og rapportering i datagrid.',
-			fr: 'Conception et développement d\'un module d\'analyse de sensibilité pour STEA évaluant l\'impact des prix, de la production, des coûts et des investissements sur la rentabilité des plateformes pétrolières, avec calculs par lots.',
+			en: 'Long-term development of STEA, Equinor\'s economic analysis tool for modelling oil and gas project profitability. Built WPF modules, calculation engines, sensitivity analysis, stochastic simulations, and a repository for model versioning with REST API and Active Directory authentication.',
+			no: 'Langsiktig utvikling av STEA, Equinors verktøy for økonomisk analyse av olje- og gassprosjekter. Bygde WPF-moduler, beregningskjerner, sensitivitetsanalyse, stokastiske simuleringer og et repository for modellversjonering med REST API og Active Directory-autentisering.',
+			fr: 'Développement à long terme de STEA, l\'outil d\'analyse économique d\'Equinor pour la modélisation de la rentabilité des projets pétroliers et gaziers. Développement de modules WPF, moteurs de calcul, analyse de sensibilité, simulations stochastiques et un dépôt de versionnement avec REST API et authentification Active Directory.',
 		},
-		tech: ['C#', '.NET', 'WPF', 'MEF', 'TDD', 'FitNesse', 'SpreadsheetGear', 'Infragistics'],
-		logo: { src: '/logos/equinor.svg', alt: 'Equinor ASA' },
-	},
-	{
-		client: 'Equinor ASA',
-		name: 'Opsjonssimulering med regresjon',
-		period: 'May 2013 – Jul 2013',
-		role: {
-			en: 'System Developer / Architect',
-			no: 'Systemutvikler / Systemarkitekt',
-			fr: 'Développeur / Architecte système',
-		},
-		description: {
-			en: 'Built an option simulation module for STEA decision-tree models of oil platforms, using stochastic price regression to find optimal investment timing, with 3D visualization of large volumes of stochastic regression results.',
-			no: 'Bygde opsjonssimulering for STEA sine treberegninger med beslutning for oljeplattformer, med stokastisk prisregresjon for å finne optimalt tidspunkt og 3D-visualisering av store mengder stokastiske regresjonsresultater.',
-			fr: 'Développement d\'un module de simulation d\'options pour les modèles de décision d\'Equinor, avec régression de prix stochastique pour trouver le moment optimal d\'investissement et visualisation 3D des résultats de régression.',
-		},
-		tech: ['C#', '.NET', 'WPF', 'MEF', 'TDD', 'FitNesse', 'Helix3D Toolkit'],
-		logo: { src: '/logos/equinor.svg', alt: 'Equinor ASA' },
-	},
-	{
-		client: 'Equinor ASA',
-		name: 'EFOR',
-		period: 'Nov 2012 – Apr 2013',
-		role: {
-			en: 'System Developer',
-			no: 'Systemutvikler',
-			fr: 'Développeur système',
-		},
-		description: {
-			en: 'Extended STEA with deterministic depreciation calculations linked to chart-of-accounts for accounting system reporting in data grids, with Excel-based interfaces for parameter editing.',
-			no: 'Utvidet STEA med deterministiske avskrivningsberegninger koblet mot kontoplan for rapportering i datagrid, med Excel-baserte grensesnitt for parameterredigering.',
-			fr: 'Extension de STEA avec des calculs d\'amortissement déterministes liés au plan comptable pour les rapports comptables, avec édition de paramètres via Excel et sortie en grille de données.',
-		},
-		tech: ['C#', '.NET', 'WPF', 'MEF', 'TDD', 'FitNesse', 'SpreadsheetGear', 'Infragistics'],
-		logo: { src: '/logos/equinor.svg', alt: 'Equinor ASA' },
-	},
-	{
-		client: 'Equinor ASA',
-		name: 'Prisavhengig simulering av kostnader',
-		period: 'Aug 2012 – Oct 2012',
-		role: {
-			en: 'System Developer',
-			no: 'Systemutvikler',
-			fr: 'Développeur système',
-		},
-		description: {
-			en: 'Extended STEA with price-dependent cost adjustments under stochastic price simulation, plus a reporting module for visualizing stochastic results in data grids and plots.',
-			no: 'Utvidet STEA med prisjusterte kostnader under stokastisk prissimulering, og rapporteringsmodul for visualisering av stokastiske resultater i datagrid og plot.',
-			fr: 'Extension de STEA avec des ajustements de coûts dépendants des prix dans les simulations de prix stochastiques, plus un module de reporting pour les résultats stochastiques en grilles et graphiques.',
-		},
-		tech: ['C#', '.NET', 'WPF', 'MEF', 'FitNesse', 'Infragistics'],
-		logo: { src: '/logos/equinor.svg', alt: 'Equinor ASA' },
-	},
-	{
-		client: 'Equinor ASA',
-		name: 'Eiermatrise',
-		period: 'May 2012 – Jul 2012',
-		role: {
-			en: 'System Developer',
-			no: 'Systemutvikler',
-			fr: 'Développeur système',
-		},
-		description: {
-			en: 'Built an ownership matrix module for STEA displaying annual ownership shares for companies and license codes, with views per company and per license code.',
-			no: 'Bygde eierandelmatrise for STEA som viste årlige eierandeler for selskap og lisenskoder, med visninger per selskap og per lisenskode.',
-			fr: 'Développement d\'un module de matrice de propriété pour STEA affichant les parts de propriété annuelles par société et code de licence.',
-		},
-		tech: ['C#', '.NET', 'WPF', 'MEF', 'TDD', 'FitNesse', 'SpreadsheetGear', 'Infragistics'],
+		tech: ['C#', '.NET', 'WPF', 'Entity Framework', 'REST API', 'OAuth 2.0', 'TDD', 'FitNesse', 'SpreadsheetGear', 'TeamCity'],
 		logo: { src: '/logos/equinor.svg', alt: 'Equinor ASA' },
 	},
 ];
 
-const currentPath = Astro.url.pathname;
-const basePath = lang === 'en'
-	? currentPath
-	: currentPath.replace(`/${lang}`, '') || '/';
-
-const localeToFlag: Record<Locale, string> = {
-	en: 'gb',
-	no: 'no',
-	fr: 'fr',
-};
 ---
 
 <Layout title={t(lang, 'home.title')} lang={lang}>
 	<section class="hero">
 		<div class="hero-header">
 			<h1>{t(lang, 'home.greeting')} <span class="name">{t(lang, 'home.name')}</span></h1>
-			<div class="toolbar">
-				<button class="theme-toggle" type="button" aria-label="Toggle dark mode">
-					<svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="4.22" x2="19.78" y2="5.64"/></svg>
-					<svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-				</button>
-				<div class="lang-switcher">
-					{locales.map((locale) => (
-						<a
-							href={getLocalePath(locale, basePath)}
-							class:list={[{ active: locale === lang }]}
-							aria-label={t(lang, `lang.${locale}` as any)}
-						>
-							<span class={`fi fi-${localeToFlag[locale]}`}></span>
-						</a>
-					))}
-				</div>
-			</div>
+			<button class="theme-toggle" type="button" aria-label="Toggle dark mode">
+				<svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="4.22" x2="19.78" y2="5.64"/></svg>
+				<svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+			</button>
 		</div>
 		<p class="tagline">{t(lang, 'home.tagline')}</p>
 	</section>
@@ -316,7 +140,7 @@ const localeToFlag: Record<Locale, string> = {
 		</ul>
 	</section>
 
-	<section>
+	{/* <section>
 		<h2>{t(lang, 'resume.experience')}</h2>
 
 		<div class="entry">
@@ -378,16 +202,16 @@ const localeToFlag: Record<Locale, string> = {
 				<p class="location">Trondheim, Norway</p>
 			</div>
 		</div>
-	</section>
+	</section> */}
 
-	{/* <section>
+	<section>
 		<h2>{t(lang, 'resume.projects')}</h2>
 		{projects.map((project) => (
 			<div class="entry">
 				<img class="entry-logo" src={project.logo.src} alt={project.logo.alt} />
 				<div class="entry-content">
 					<div class="entry-header">
-						<h3 class="entry-name">{project.client} <span class="entry-sub">— {project.name}</span></h3>
+						<h3 class="entry-name">{project.client}<span class="entry-sub">{project.name}</span></h3>
 						<span class="date-tag">{project.period}</span>
 					</div>
 					<span class="meta">{project.role[lang]}</span>
@@ -398,7 +222,7 @@ const localeToFlag: Record<Locale, string> = {
 				</div>
 			</div>
 		))}
-	</section> */}
+	</section>
 
 	<section>
 		<h2>{t(lang, 'resume.education')}</h2>
@@ -457,7 +281,7 @@ const localeToFlag: Record<Locale, string> = {
 
 	h1 {
 		font-size: 2.5rem;
-		margin-bottom: 0.5rem;
+		margin: 0;
 	}
 
 	.name {
@@ -469,13 +293,7 @@ const localeToFlag: Record<Locale, string> = {
 		color: var(--color-text);
 	}
 
-	/* Toolbar */
-	.toolbar {
-		display: flex;
-		align-items: center;
-		flex-shrink: 0;
-	}
-
+	/* Theme toggle */
 	.theme-toggle {
 		background: none;
 		border: none;
@@ -484,31 +302,11 @@ const localeToFlag: Record<Locale, string> = {
 		padding: 0.25rem;
 		display: flex;
 		align-items: center;
+		flex-shrink: 0;
 	}
 
 	.theme-toggle:hover {
 		color: var(--color-primary);
-	}
-
-	.lang-switcher {
-		display: flex;
-		gap: 0.5rem;
-		margin-left: 0.75rem;
-	}
-
-	.lang-switcher a {
-		display: flex;
-		opacity: 0.5;
-		transition: opacity 0.15s;
-	}
-
-	.lang-switcher a:hover {
-		opacity: 0.8;
-		text-decoration: none;
-	}
-
-	.lang-switcher a.active {
-		opacity: 1;
 	}
 
 	/* Sections */
@@ -656,6 +454,7 @@ const localeToFlag: Record<Locale, string> = {
 	.entry-sub {
 		font-weight: normal;
 		color: var(--color-secondary);
+		margin-left: 0.5rem;
 	}
 
 	.entry-description {

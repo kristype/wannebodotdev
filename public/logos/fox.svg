@@ -9,12 +9,20 @@
    enable-background="new 0 0 1024 1024"
    xml:space="preserve"
    sodipodi:docname="fox.svg"
-   inkscape:version="1.4 (86a8ad7, 2024-10-11)"
+   inkscape:version="1.4.3 (0d15f75, 2025-12-25)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg"><defs
-   id="defs7" /><sodipodi:namedview
+   id="defs7">
+  <style
+   id="style1">
+    path { fill: #09637E; }
+    @media (prefers-color-scheme: dark) {
+      path { fill: #3db8d9; }
+    }
+  </style>
+</defs><sodipodi:namedview
    id="namedview7"
    pagecolor="#505050"
    bordercolor="#eeeeee"
@@ -26,12 +34,12 @@
    showguides="true"
    showgrid="false"
    inkscape:zoom="0.92138672"
-   inkscape:cx="548.62957"
-   inkscape:cy="554.05617"
+   inkscape:cx="644.13778"
+   inkscape:cy="499.79014"
    inkscape:window-width="1827"
-   inkscape:window-height="1205"
-   inkscape:window-x="1234"
-   inkscape:window-y="784"
+   inkscape:window-height="1172"
+   inkscape:window-x="229"
+   inkscape:window-y="39"
    inkscape:window-maximized="0"
    inkscape:current-layer="Layer_1"><inkscape:grid
      id="grid7"
@@ -43,11 +51,18 @@
      empcolor="#0099e5"
      empopacity="0.30196078"
      color="#0099e5"
-     opacity="0.14901961"
+     opacity="0.14902"
      empspacing="5"
      enabled="true"
      visible="false" /></sodipodi:namedview>
-<path
+<ellipse
+   style="fill:#b0b0b0;fill-opacity:1;stroke:#000000;stroke-width:1.23173;stroke-dasharray:none;stroke-opacity:1"
+   id="path20"
+   cx="509.55801"
+   cy="499.79013"
+   rx="371.64893"
+   ry="456.30396"
+   inkscape:label="fox fill" /><path
    fill="#09637E"
    opacity="1"
    stroke="none"
