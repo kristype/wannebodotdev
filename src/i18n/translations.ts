@@ -8,7 +8,7 @@ export const translations = {
     "footer.copyright": `© ${new Date().getFullYear()} Kristian Wannebo`,
 
     // Home
-    "home.title": "Home",
+    "home.title": "Wannebo",
     "home.greeting": "Hi, I'm",
     "home.name": "Kristian",
     "home.tagline": "Senior full-stack developer with 13+ years of experience building web solutions.",
@@ -102,7 +102,7 @@ export const translations = {
     "footer.copyright": `© ${new Date().getFullYear()} Kristian Wannebo`,
 
     // Home
-    "home.title": "Hjem",
+    "home.title": "Wannebo",
     "home.greeting": "Hei, jeg er",
     "home.name": "Kristian",
     "home.tagline": "Senior fullstack-utvikler med 13+ års erfaring med å bygge webløsninger.",
@@ -196,7 +196,7 @@ export const translations = {
     "footer.copyright": `© ${new Date().getFullYear()} Kristian Wannebo`,
 
     // Home
-    "home.title": "Accueil",
+    "home.title": "Wannebo",
     "home.greeting": "Bonjour, je suis",
     "home.name": "Kristian",
     "home.tagline": "Développeur full-stack senior avec plus de 13 ans d'expérience dans la création de solutions web.",
