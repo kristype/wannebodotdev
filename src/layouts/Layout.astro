@@ -91,6 +91,7 @@ const localeToFlag: Record<Locale, string> = {
 		--color-surface: #d5e8eb;
 	}
 
+	/* Auto dark mode: follows OS preference, unless the user has explicitly chosen light. */
 	@media (prefers-color-scheme: dark) {
 		:root:not([data-theme="light"]) {
 			--color-heading: #e8e8e8;
@@ -104,6 +105,11 @@ const localeToFlag: Record<Locale, string> = {
 		}
 	}
 
+	/*
+	 * Manual dark mode: user has explicitly chosen dark via data-theme="dark".
+	 * Duplicates the values above because this rule must apply regardless of
+	 * OS preference — the two cases cannot be combined into a single selector.
+	 */
 	[data-theme="dark"] {
 		--color-heading: #e8e8e8;
 		--color-text: #b0b0b0;
