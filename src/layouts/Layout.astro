@@ -41,29 +41,6 @@ const localeToFlag: Record<Locale, string> = {
 		</script>
 	</head>
 	<body>
-		<nav>
-			<div class="nav-links">
-				<a href={getLocalePath(lang, '/')}>{t(lang, 'nav.home')}</a>
-				<a href={getLocalePath(lang, '/resume')}>{t(lang, 'nav.resume')}</a>
-				<a href={getLocalePath(lang, '/about')}>{t(lang, 'nav.about')}</a>
-				<a href={getLocalePath(lang, '/styleguide')}>{t(lang, 'nav.styleguide')}</a>
-			</div>
-			<button class="theme-toggle" type="button" aria-label="Toggle dark mode">
-				<svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="4.22" x2="19.78" y2="5.64"/></svg>
-				<svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-			</button>
-			<div class="lang-switcher">
-				{locales.map((locale) => (
-					<a
-						href={getLocalePath(locale, basePath)}
-						class:list={[{ active: locale === lang }]}
-						aria-label={t(lang, `lang.${locale}` as any)}
-					>
-						<span class={`fi fi-${localeToFlag[locale]}`}></span>
-					</a>
-				))}
-			</div>
-		</nav>
 		<main>
 			<slot />
 		</main>
@@ -156,70 +133,10 @@ const localeToFlag: Record<Locale, string> = {
 
 	body {
 		margin: 0 auto;
-		max-width: 720px;
 		padding: 1rem;
 		min-height: 100%;
 		display: flex;
 		flex-direction: column;
-	}
-
-	nav {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		padding: 1rem 0;
-		border-bottom: 1px solid var(--color-border);
-		margin-bottom: 2rem;
-	}
-
-	.nav-links {
-		display: flex;
-		gap: 1.5rem;
-	}
-
-	nav a {
-		color: var(--color-heading);
-		text-decoration: none;
-	}
-
-	nav a:hover {
-		text-decoration: underline;
-	}
-
-	.theme-toggle {
-		background: none;
-		border: none;
-		cursor: pointer;
-		color: var(--color-heading);
-		padding: 0.25rem;
-		display: flex;
-		align-items: center;
-		margin-left: auto;
-	}
-
-	.theme-toggle:hover {
-		color: var(--color-primary);
-	}
-
-	.lang-switcher {
-		display: flex;
-		gap: 0.5rem;
-		margin-left: 0.75rem;
-	}
-
-	.lang-switcher a {
-		display: flex;
-		opacity: 0.5;
-		transition: opacity 0.15s;
-	}
-
-	.lang-switcher a:hover {
-		opacity: 0.8;
-		text-decoration: none;
-	}
-
-	.lang-switcher a.active {
-		opacity: 1;
 	}
 
 	main {
@@ -227,7 +144,9 @@ const localeToFlag: Record<Locale, string> = {
 	}
 
 	footer {
-		margin-top: 3rem;
+		max-width: 720px;
+		width: 100%;
+		margin: 3rem auto 0;
 		padding: 1rem 0;
 		border-top: 1px solid var(--color-border);
 		color: var(--color-text);

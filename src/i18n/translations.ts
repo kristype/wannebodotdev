@@ -2,8 +2,6 @@ export const translations = {
   en: {
     // Nav
     "nav.home": "Home",
-    "nav.resume": "Resume",
-    "nav.about": "About",
     "nav.styleguide": "Style Guide",
 
     // Footer
@@ -14,9 +12,6 @@ export const translations = {
     "home.greeting": "Hi, I'm",
     "home.name": "Kristian",
     "home.tagline": "Senior full-stack developer with 13+ years of experience building web solutions.",
-    "home.viewResume": "View Resume",
-    "home.aboutMe": "About Me",
-
     // Resume
     "resume.title": "Resume — Kristian Wannebo",
     "resume.heading": "Resume",
@@ -101,8 +96,6 @@ export const translations = {
   no: {
     // Nav
     "nav.home": "Hjem",
-    "nav.resume": "CV",
-    "nav.about": "Om meg",
     "nav.styleguide": "Stilguide",
 
     // Footer
@@ -113,9 +106,6 @@ export const translations = {
     "home.greeting": "Hei, jeg er",
     "home.name": "Kristian",
     "home.tagline": "Senior fullstack-utvikler med 13+ års erfaring med å bygge webløsninger.",
-    "home.viewResume": "Se CV",
-    "home.aboutMe": "Om meg",
-
     // Resume
     "resume.title": "CV — Kristian Wannebo",
     "resume.heading": "CV",
@@ -200,8 +190,6 @@ export const translations = {
   fr: {
     // Nav
     "nav.home": "Accueil",
-    "nav.resume": "CV",
-    "nav.about": "À propos",
     "nav.styleguide": "Guide de style",
 
     // Footer
@@ -212,9 +200,6 @@ export const translations = {
     "home.greeting": "Bonjour, je suis",
     "home.name": "Kristian",
     "home.tagline": "Développeur full-stack senior avec plus de 13 ans d'expérience dans la création de solutions web.",
-    "home.viewResume": "Voir le CV",
-    "home.aboutMe": "À propos",
-
     // Resume
     "resume.title": "CV — Kristian Wannebo",
     "resume.heading": "CV",
